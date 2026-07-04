@@ -2,13 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Category\DestroyRequest;
-use App\Http\Requests\Category\ShowRequest;
 use App\Http\Requests\Category\StoreRequest;
 use App\Http\Requests\Category\UpdateRequest;
 use App\Traits\ApiResponse;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use OpenApi\Annotations as OA;
+
+/**
+ * @OA\Get(
+ *     path="/api/v1/categories",
+ *     summary="Obtener todas las categorías",
+ *     tags={"Categorías"},
+ *     @OA\Response(
+ *         response=200,
+ *         description="Categorías obtenidas con éxito"
+ *     )
+ * )
+ * @OA\Tag(
+ *     name="Categorías",
+ *     description="Operaciones relacionadas con las categorías"
+ * )
+ */
 
 class CategoryController extends Controller
 {
